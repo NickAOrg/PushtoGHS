@@ -1,7 +1,7 @@
 {
   "name": "@itentialopensource/prebuilt-wizard",
   "author": "Itential Automation Platform",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pre-built to create a new Pre-Built bundle in Admin Essentials.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
