@@ -1,0 +1,649 @@
+{
+  "id": "61a8f2e224eb8400d5a5c068",
+  "bindingSchema": {
+    "properties": {
+      "categories": {
+        "items": {
+          "properties": {}
+        }
+      },
+      "keywords": {
+        "items": {
+          "properties": {}
+        }
+      },
+      "operationsManagerAutomations": {
+        "items": {
+          "properties": {
+            "name": {
+              "binding:method": "GET",
+              "binding:link": {
+                "$ref": "/links",
+                "rel": "collection"
+              },
+              "binding:target": {
+                "propertyPointer": "/enum"
+              },
+              "binding:hyperSchema": {
+                "type": "object",
+                "base": "/operations-manager",
+                "links": [
+                  {
+                    "rel": "collection",
+                    "href": "/automations",
+                    "targetMediaType": "application/json",
+                    "targetSchema": {
+                      "$ref": "#"
+                    },
+                    "variables": []
+                  }
+                ]
+              },
+              "binding:source": {
+                "propertyPointer": "/data",
+                "keyPointer": "/name"
+              }
+            }
+          }
+        }
+      },
+      "automationCatalogs": {
+        "items": {
+          "properties": {
+            "name": {
+              "binding:method": "GET",
+              "binding:link": {
+                "$ref": "/links",
+                "rel": "collection"
+              },
+              "binding:target": {
+                "propertyPointer": "/enum"
+              },
+              "binding:hyperSchema": {
+                "type": "object",
+                "base": "/automation_catalog",
+                "links": [
+                  {
+                    "rel": "collection",
+                    "href": "/automations",
+                    "targetMediaType": "application/json",
+                    "targetSchema": {
+                      "$ref": "#"
+                    },
+                    "variables": []
+                  }
+                ]
+              },
+              "binding:source": {
+                "propertyPointer": "/list",
+                "keyPointer": "/name"
+              }
+            }
+          }
+        }
+      },
+      "automationWorkflows": {
+        "items": {
+          "properties": {
+            "name": {
+              "binding:method": "POST",
+              "binding:link": {
+                "$ref": "/links",
+                "rel": "collection"
+              },
+              "binding:body": {
+                "options": {
+                  "skip": 0,
+                  "limit": 0
+                }
+              },
+              "binding:target": {
+                "propertyPointer": "/enum"
+              },
+              "binding:hyperSchema": {
+                "type": "object",
+                "base": "/workflow_engine",
+                "links": [
+                  {
+                    "rel": "collection",
+                    "href": "/workflows/search",
+                    "targetMediaType": "application/json",
+                    "targetSchema": {
+                      "$ref": "#"
+                    },
+                    "variables": []
+                  }
+                ]
+              },
+              "binding:source": {
+                "propertyPointer": "/results",
+                "keyPointer": "/name"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "created": "2021-12-02T16:22:58.716Z",
+  "createdBy": "admin@pronghorn",
+  "description": "",
+  "lastUpdated": "2022-12-02T16:32:17.447Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Create Prebuilt Form",
+  "schema": {
+    "title": "Create Prebuilt Form",
+    "description": "",
+    "type": "object",
+    "required": [
+      "scope",
+      "prebuiltName",
+      "contributor"
+    ],
+    "properties": {
+      "scope": {
+        "type": "string",
+        "title": "Scope",
+        "_id": "/properties/scope",
+        "description": "Add the scope of your pre-built. For example, our open source projects have a scope of @itentialopensource",
+        "pattern": "@[a-z0-9-~][a-z0-9-._~]*$"
+      },
+      "prebuiltName": {
+        "type": "string",
+        "title": "Prebuilt Name",
+        "_id": "/properties/prebuiltName",
+        "description": "Name consist of one or more words, including numbers, separated by spaces only.",
+        "pattern": "^(([a-zA-Z0-9]*))(\\s([a-zA-Z0-9]+))*$",
+        "minLength": 1
+      },
+      "prebuiltDescription": {
+        "type": "string",
+        "title": "Prebuilt Description",
+        "_id": "/properties/prebuiltDescription",
+        "description": "Your prebuilt's description should provide information about what the prebuilt accomplishes. You will be able to see this description on the Admin Essentials page."
+      },
+      "license": {
+        "type": "string",
+        "title": "License",
+        "_id": "/properties/license",
+        "description": "(OPTIONAL) Provide a license:"
+      },
+      "contributor": {
+        "type": "string",
+        "title": "Contributor",
+        "_id": "/properties/contributor",
+        "description": "Please provide your name"
+      },
+      "readme": {
+        "type": "string",
+        "title": "Readme",
+        "_id": "/properties/readme",
+        "description": "This readme will be displayed on the Admin Essentials page. You can edit this placeholder to provide a description of what your prebuilt will accomplish.",
+        "default": ""
+      },
+      "zeroTouch": {
+        "type": "boolean",
+        "title": "Zero Touch",
+        "_id": "/properties/zeroTouch",
+        "description": "",
+        "default": true,
+        "enum": [
+          true,
+          false
+        ]
+      },
+      "categories": {
+        "type": "array",
+        "title": "Categories",
+        "description": "Optionally enter a category to associate this prebuilt with",
+        "items": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "category": {
+              "type": "string",
+              "title": "Category",
+              "_id": "/properties/categories/items/properties/category",
+              "description": "Optionally select a category that this prebuilt fits into",
+              "enum": [
+                "Authentication",
+                "Cloud",
+                "Controller / Orchestration",
+                "DevOps",
+                "NetOps",
+                "Inventory",
+                "ITSM / Testing",
+                "Notification / Messaging",
+                "Persistence",
+                "SD-WAN",
+                "Security",
+                "Telemetry / Analytics",
+                "Utilities"
+              ]
+            }
+          }
+        }
+      },
+      "keywords": {
+        "type": "array",
+        "title": "Keywords",
+        "description": "Optionally enter any keywords to associate with this prebuilt",
+        "items": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "keyword": {
+              "type": "string",
+              "title": "Keyword",
+              "_id": "/properties/keywords/items/properties/keyword",
+              "description": ""
+            }
+          }
+        }
+      },
+      "operationsManagerAutomations": {
+        "type": "array",
+        "title": "Operations Manager Automations",
+        "description": "",
+        "items": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "_id": "/properties/operationsManagerAutomations/items/properties/name",
+              "description": "",
+              "enum": []
+            }
+          }
+        }
+      },
+      "automationCatalogs": {
+        "type": "array",
+        "title": "Automation Catalogs",
+        "description": "",
+        "items": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "_id": "/properties/automationCatalogs/items/properties/name",
+              "description": "Automation Catalog Name",
+              "enum": []
+            }
+          }
+        }
+      },
+      "automationWorkflows": {
+        "type": "array",
+        "title": "Automation Workflows",
+        "description": "",
+        "items": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "_id": "/properties/automationWorkflows/items/properties/name",
+              "description": "Workflow Automation Name",
+              "enum": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "struct": {
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "71695525-c187-4f87-9a8c-6a40cd18aa5e",
+        "type": "string",
+        "title": "Scope",
+        "description": "Add the scope of your pre-built. For example, our open source projects have a scope of @itentialopensource",
+        "placeholder": "Enter text",
+        "required": true,
+        "readOnly": false,
+        "binding": false,
+        "rel": "item",
+        "targetPointer": "/default",
+        "pattern": "@[a-z0-9-~][a-z0-9-._~]*$"
+      },
+      {
+        "nodeId": "0351d824-c65b-415c-8086-b9b7dae12c4e",
+        "type": "string",
+        "title": "Prebuilt Name",
+        "description": "Name consist of one or more words, including numbers, separated by spaces only.",
+        "placeholder": "Enter text",
+        "required": true,
+        "readOnly": false,
+        "binding": false,
+        "rel": "item",
+        "targetPointer": "/default",
+        "pattern": "^(([a-zA-Z0-9]*))(\\s([a-zA-Z0-9]+))*$",
+        "minLength": 1
+      },
+      {
+        "nodeId": "9556fe8f-65c4-4412-a0ef-f7d4132f9e2e",
+        "type": "string",
+        "widget": "textarea",
+        "title": "Prebuilt Description",
+        "description": "Your prebuilt's description should provide information about what the prebuilt accomplishes. You will be able to see this description on the Admin Essentials page.",
+        "placeholder": "Enter a description about your prebuilt",
+        "required": false
+      },
+      {
+        "nodeId": "674ebd12-d227-41fa-a234-21003346aabf",
+        "type": "string",
+        "title": "License",
+        "description": "(OPTIONAL) Provide a license:",
+        "placeholder": "*By default Apache License 2.0 will be supplied",
+        "required": false,
+        "readOnly": false,
+        "binding": false,
+        "rel": "item",
+        "targetPointer": "/default"
+      },
+      {
+        "nodeId": "d213e136-92cc-4a7a-a9bb-980652f65771",
+        "type": "string",
+        "title": "Contributor",
+        "description": "Please provide your name",
+        "placeholder": "First name Last Name",
+        "required": true,
+        "readOnly": false,
+        "binding": false,
+        "rel": "item",
+        "targetPointer": "/default"
+      },
+      {
+        "nodeId": "d2af58ae-4759-48bb-a88c-84fd9704e374",
+        "type": "string",
+        "widget": "textarea",
+        "title": "Readme",
+        "description": "This readme will be displayed on the Admin Essentials page. You can edit this placeholder to provide a description of what your prebuilt will accomplish.",
+        "placeholder": "",
+        "required": false,
+        "default": ""
+      },
+      {
+        "nodeId": "bd33cf32-15c6-4a2a-a97e-677a16501fec",
+        "type": "boolean",
+        "title": "Zero Touch",
+        "description": "",
+        "default": true,
+        "enum": [
+          {
+            "id": "27c8a60a-5bbe-4dc0-9770-eb56be05715a",
+            "value": true
+          },
+          {
+            "id": "8b06e2b9-faff-4bc9-9fbe-0288762cf1cf",
+            "value": false
+          }
+        ]
+      },
+      {
+        "nodeId": "fb3e4b63-60fe-455d-97f2-33ff0b544fbc",
+        "type": "array",
+        "description": "Optionally enter a category to associate this prebuilt with",
+        "items": [
+          {
+            "nodeId": "34fa1b97-b7fb-42e9-ba6d-51f348c42fac",
+            "type": "string",
+            "title": "Category",
+            "description": "Optionally select a category that this prebuilt fits into",
+            "placeholder": "Select an item",
+            "required": false,
+            "enum": [
+              {
+                "id": "ca8cabe8-c209-4401-a82e-edf3758e60ce",
+                "label": "Authentication",
+                "value": "Authentication"
+              },
+              {
+                "id": "d7edbce1-cad7-4348-ad25-c4bf031a45fc",
+                "label": "Cloud",
+                "value": "Cloud"
+              },
+              {
+                "id": "4f860caf-c2c5-42ef-8339-3abbd07a5915",
+                "label": "Controller / Orchestration",
+                "value": "Controller / Orchestration"
+              },
+              {
+                "id": "4a575870-539a-443e-aeb8-7051282362f9",
+                "label": "DevOps",
+                "value": "DevOps"
+              },
+              {
+                "id": "fdbd5325-d534-4dc1-b680-a0875965f34d",
+                "label": "NetOps",
+                "value": "NetOps"
+              },
+              {
+                "id": "4658b2f9-234d-4e64-91fd-ffe7fd8f1d86",
+                "label": "Inventory",
+                "value": "Inventory"
+              },
+              {
+                "id": "84787dcd-c9f2-442a-aaa5-9317f8276d54",
+                "label": "ITSM / Testing",
+                "value": "ITSM / Testing"
+              },
+              {
+                "id": "5ccb9c71-ccc0-4801-aff0-4a406c7676f9",
+                "label": "Notification / Messaging",
+                "value": "Notification / Messaging"
+              },
+              {
+                "id": "f35316b7-4427-4f6a-b932-3e5a2191e657",
+                "label": "Persistence",
+                "value": "Persistence"
+              },
+              {
+                "id": "50dbbe3f-b00f-4147-a3c8-b644d7e61942",
+                "label": "SD-WAN",
+                "value": "SD-WAN"
+              },
+              {
+                "id": "b6483bb2-bc6a-4978-b8d1-fbb72c142598",
+                "label": "Security",
+                "value": "Security"
+              },
+              {
+                "id": "dba24830-cc37-470a-82ab-5a6b0f5583a9",
+                "label": "Telemetry / Analytics",
+                "value": "Telemetry / Analytics"
+              },
+              {
+                "id": "7833a6fc-6411-46f3-b3ff-498005924ea5",
+                "label": "Utilities",
+                "value": "Utilities"
+              }
+            ],
+            "binding": false,
+            "rel": "collection",
+            "targetPointer": "/enum"
+          }
+        ],
+        "title": "Categories"
+      },
+      {
+        "nodeId": "9743a2b3-975c-4127-8717-0205ff3a8f5c",
+        "type": "array",
+        "description": "Optionally enter any keywords to associate with this prebuilt",
+        "items": [
+          {
+            "nodeId": "4f4a7027-1c72-42af-9465-c17d22314eb9",
+            "type": "string",
+            "title": "Keyword",
+            "description": "",
+            "placeholder": "Enter a keyword",
+            "required": false,
+            "readOnly": false,
+            "binding": false,
+            "rel": "item",
+            "targetPointer": "/default"
+          }
+        ],
+        "title": "Keywords"
+      },
+      {
+        "nodeId": "4446588f-e508-40d1-abf9-4f3eb968d75a",
+        "type": "array",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "dff89a5b-9c01-481a-ba66-d3363a0e6c74",
+            "type": "string",
+            "title": "Name",
+            "description": "",
+            "placeholder": "Select an Operation Manager Automation",
+            "required": true,
+            "enum": [],
+            "binding": true,
+            "rel": "collection",
+            "targetPointer": "/enum",
+            "method": "GET",
+            "base": "/operations-manager",
+            "href": "/automations",
+            "sourcePointer": "/data",
+            "sourceKeyPointer": "/name"
+          }
+        ],
+        "title": "Operations Manager Automations"
+      },
+      {
+        "nodeId": "a081d2b5-f118-472a-9da4-13b3277510e2",
+        "type": "array",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "8a9be65d-7eb0-458c-b57c-97380996c0f5",
+            "type": "string",
+            "title": "Name",
+            "description": "Automation Catalog Name",
+            "placeholder": "Select an Automation Catalog item",
+            "required": true,
+            "enum": [],
+            "binding": true,
+            "rel": "collection",
+            "targetPointer": "/enum",
+            "method": "GET",
+            "base": "/automation_catalog",
+            "href": "/automations",
+            "sourcePointer": "/list",
+            "sourceKeyPointer": "/name"
+          }
+        ],
+        "title": "Automation Catalogs"
+      },
+      {
+        "nodeId": "a0eb027f-c130-41a1-a4b5-358c066e3a6f",
+        "type": "array",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "74f4d0d3-40d3-4538-a422-25391b4dc5d7",
+            "type": "string",
+            "title": "Name",
+            "description": "Workflow Automation Name",
+            "placeholder": "Select a Workflow",
+            "required": true,
+            "enum": [],
+            "binding": true,
+            "rel": "collection",
+            "targetPointer": "/enum",
+            "method": "POST",
+            "base": "/workflow_engine",
+            "href": "/workflows/search",
+            "body": {
+              "options": {
+                "skip": 0,
+                "limit": 0
+              }
+            },
+            "sourcePointer": "/results",
+            "sourceKeyPointer": "/name"
+          }
+        ],
+        "title": "Automation Workflows"
+      }
+    ]
+  },
+  "uiSchema": {
+    "scope": {
+      "ui:placeholder": "Enter text"
+    },
+    "prebuiltName": {
+      "ui:placeholder": "Enter text"
+    },
+    "prebuiltDescription": {
+      "ui:placeholder": "Enter a description about your prebuilt",
+      "ui:widget": "textarea"
+    },
+    "license": {
+      "ui:placeholder": "*By default Apache License 2.0 will be supplied"
+    },
+    "contributor": {
+      "ui:placeholder": "First name Last Name"
+    },
+    "readme": {
+      "ui:widget": "textarea"
+    },
+    "categories": {
+      "items": {
+        "category": {
+          "ui:placeholder": "Select an item"
+        }
+      }
+    },
+    "keywords": {
+      "items": {
+        "keyword": {
+          "ui:placeholder": "Enter a keyword"
+        }
+      }
+    },
+    "operationsManagerAutomations": {
+      "items": {
+        "name": {
+          "ui:placeholder": "Select an Operation Manager Automation"
+        }
+      }
+    },
+    "automationCatalogs": {
+      "items": {
+        "name": {
+          "ui:placeholder": "Select an Automation Catalog item"
+        }
+      }
+    },
+    "automationWorkflows": {
+      "items": {
+        "name": {
+          "ui:placeholder": "Select a Workflow"
+        }
+      }
+    }
+  },
+  "validationSchema": {
+    "categories": {},
+    "keywords": {},
+    "operationsManagerAutomations": {},
+    "automationCatalogs": {},
+    "automationWorkflows": {}
+  },
+  "version": "2020.1"
+}
