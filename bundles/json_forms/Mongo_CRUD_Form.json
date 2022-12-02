@@ -1,0 +1,138 @@
+{
+  "id": "600f181d5a09e2458596a7ae",
+  "bindingSchema": {
+    "properties": {
+      "adapterName": {
+        "binding:method": "GET",
+        "binding:link": {
+          "$ref": "/links",
+          "rel": "collection"
+        },
+        "binding:source": {
+          "propertyPointer": "/",
+          "keyPointer": "/id"
+        },
+        "binding:target": {
+          "propertyPointer": "/enum"
+        },
+        "binding:hyperSchema": {
+          "type": "object",
+          "base": "/",
+          "links": [
+            {
+              "rel": "collection",
+              "href": "health/modules",
+              "targetMediaType": "application/json",
+              "targetSchema": {
+                "$ref": "#"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "created": "2020-03-11T12:55:13.123Z",
+  "createdBy": "admin@pronghorn",
+  "description": "",
+  "lastUpdated": "2021-11-10T17:09:27.366Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Mongo_CRUD_Form",
+  "schema": {
+    "title": "Mongo_CRUD_Form",
+    "description": "",
+    "type": "object",
+    "required": [
+      "adapterName",
+      "collection",
+      "selectACrudOperation"
+    ],
+    "properties": {
+      "adapterName": {
+        "type": "string",
+        "title": "Adapter Name",
+        "description": "Please select your adapter mongo instance name",
+        "enum": []
+      },
+      "collection": {
+        "type": "string",
+        "title": "Collection",
+        "description": "Collection Name"
+      },
+      "selectACrudOperation": {
+        "type": "string",
+        "title": "Select a CRUD operation",
+        "description": "Select a CRUD operation",
+        "enum": [
+          "Create",
+          "Read",
+          "Update",
+          "Delete"
+        ]
+      }
+    }
+  },
+  "struct": {
+    "nodeId": "91818615-cfa3-4e9e-833b-0ff1b80fc1cb",
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "7a529b4c-fd0d-4671-b123-ba3c6a58422d",
+        "type": "string",
+        "title": "Adapter Name",
+        "description": "Please select your adapter mongo instance name",
+        "placeholder": "",
+        "required": true,
+        "enum": [],
+        "binding": true,
+        "rel": "collection",
+        "targetPointer": "/enum",
+        "method": "GET",
+        "base": "/",
+        "href": "health/modules",
+        "sourcePointer": "/",
+        "sourceKeyPointer": "/id"
+      },
+      {
+        "nodeId": "3572d822-02f1-46b2-8995-d28b49e0e19c",
+        "type": "string",
+        "title": "Collection",
+        "description": "Collection Name",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "nodeId": "fd0e03e7-68c4-42d7-9f36-7ae42787d6ed",
+        "type": "string",
+        "title": "Select a CRUD operation",
+        "description": "Select a CRUD operation",
+        "placeholder": "",
+        "required": true,
+        "enum": [
+          {
+            "id": "2f70c8f4-5052-45a2-8e82-5eaee80c3a1f",
+            "value": "Create"
+          },
+          {
+            "id": "ed0c372f-49cd-47c7-b8ec-eb40496af4a1",
+            "value": "Read"
+          },
+          {
+            "id": "d3760afa-ce18-4090-a936-a22a8aa07a68",
+            "value": "Update"
+          },
+          {
+            "id": "6e8f359a-6aff-4f62-82fe-750b4957f929",
+            "value": "Delete"
+          }
+        ],
+        "binding": false,
+        "rel": "collection",
+        "targetPointer": "/enum"
+      }
+    ]
+  },
+  "uiSchema": {},
+  "validationSchema": {},
+  "version": "2019.3"
+}

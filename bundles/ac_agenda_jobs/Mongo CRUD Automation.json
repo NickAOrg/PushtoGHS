@@ -1,0 +1,26 @@
+{
+  "_id": "600f187fd28734a066bd2223",
+  "data": {
+    "description": "",
+    "workflowId": "Mongo_CRUD_Workflow",
+    "formId": "Mongo_CRUD_Form",
+    "formData": {},
+    "formSchemaHash": 1339646506,
+    "gbac": {
+      "write": [],
+      "read": []
+    },
+    "lastUpdated": "2022-12-02T18:59:16.554Z",
+    "modifiedById": "618009a031d7680dbad39d8b",
+    "modifiedByUsername": "admin@pronghorn"
+  },
+  "lastModifiedBy": "8220bd1552a5-412",
+  "lastRunAt": null,
+  "name": "Mongo CRUD Automation",
+  "nextRunAt": null,
+  "priority": 0,
+  "repeatInterval": null,
+  "repeatTimezone": null,
+  "type": "normal",
+  "tags": []
+}

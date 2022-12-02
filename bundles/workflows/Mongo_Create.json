@@ -1,0 +1,275 @@
+{
+  "canvasVersion": 1,
+  "created": "2020-04-01T18:50:27.629Z",
+  "createdVersion": "5.5.9-2019.3.0.0",
+  "created_by": {
+    "provenance": "Itential LDAP",
+    "username": "vikram.ramesh",
+    "firstname": "Vikram",
+    "inactive": true
+  },
+  "description": null,
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "collectionName": {
+        "type": "string"
+      },
+      "adapterName": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      }
+    },
+    "required": [
+      "collectionName",
+      "adapterName"
+    ]
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.35.0",
+  "last_updated": "2021-11-10T17:09:27.026Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "name": "Mongo_Create",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "collectionName": {
+        "type": "string"
+      },
+      "adapterName": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      }
+    }
+  },
+  "tasks": {
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 0.7832469775474957,
+      "y": 0.5184659090909091
+    },
+    "e38c": {
+      "name": "ShowJsonForm",
+      "canvasName": "ShowJsonForm",
+      "summary": "Show Json Form",
+      "description": "Show Json Form",
+      "location": "Application",
+      "app": "JsonForms",
+      "displayName": "JsonForms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_id": "Mongo_CRUD_Document_Form",
+          "instance_data": {
+            "firstName": "John",
+            "lastName": "Legend",
+            "email": "john@legend.com"
+          }
+        },
+        "outgoing": {
+          "export": null
+        },
+        "error": ""
+      },
+      "view": "/json-forms/task/ShowJsonForm",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>ShowJs</span>onForm"
+        }
+      ],
+      "groups": [],
+      "x": 0.18739205526770294,
+      "y": 0.49857954545454547,
+      "scheduled": false
+    },
+    "4ee5": {
+      "name": "create",
+      "canvasName": "create",
+      "summary": "Create an item in the collection in the database",
+      "description": "Create an item in the collection in the database",
+      "location": "Adapter",
+      "locationType": "DBMongo",
+      "app": "DBMongo",
+      "displayName": "DBMongo",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "collectionName": "$var.job.collectionName",
+          "data": "$var.e38c.export",
+          "adapter_id": "$var.job.adapterName"
+        },
+        "outgoing": {
+          "result": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>create</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Create</span> an item in the collection in the database"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Create</span> an item in the collection in the database"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.41968911917098445,
+      "y": 0.5071022727272727,
+      "scheduled": false
+    },
+    "e0f4": {
+      "name": "ViewData",
+      "canvasName": "ViewData",
+      "summary": "Error Creating",
+      "description": "View data in a pretty format",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error Creating Document",
+          "message": "There was an error with the Database Create operation",
+          "body": "",
+          "variables": {},
+          "btn_success": "Retry",
+          "btn_failure": "Exit"
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 0.41364421416234887,
+      "y": 0.7897727272727273,
+      "scheduled": false
+    },
+    "b80c": {
+      "name": "ViewData",
+      "canvasName": "ViewData",
+      "summary": "Success",
+      "description": "Successfully Created",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Successfully Created",
+          "message": "Successfully Created",
+          "body": "",
+          "variables": {},
+          "btn_success": "Success",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 0.646804835924007,
+      "y": 0.5184659090909091,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "workflow_start": {
+      "e38c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "e38c": {
+      "4ee5": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "4ee5": {
+      "e0f4": {
+        "type": "standard",
+        "state": "error"
+      },
+      "b80c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e0f4": {
+      "4ee5": {
+        "type": "revert",
+        "state": "success"
+      },
+      "workflow_end": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "b80c": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "type": "automation",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 1
+}

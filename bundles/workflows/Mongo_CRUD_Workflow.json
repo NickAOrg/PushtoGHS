@@ -1,0 +1,798 @@
+{
+  "canvasVersion": 1,
+  "created": "2020-04-01T18:45:57.391Z",
+  "createdVersion": "5.5.9-2019.3.0.0",
+  "created_by": {
+    "provenance": "Itential LDAP",
+    "username": "vikram.ramesh",
+    "firstname": "Vikram",
+    "inactive": true
+  },
+  "description": null,
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      }
+    },
+    "required": [
+      "formData"
+    ]
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.35.0",
+  "last_updated": "2021-11-10T17:09:27.009Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "name": "Mongo_CRUD_Workflow",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "adapterName": {
+        "type": [
+          "string",
+          "number",
+          "object",
+          "integer",
+          "array",
+          "boolean",
+          "null"
+        ],
+        "examples": [
+          "value"
+        ]
+      }
+    }
+  },
+  "tasks": {
+    "5534": {
+      "name": "query",
+      "summary": "Query Adapter Name",
+      "description": "Query collection name from JSON Form.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "adapterName",
+          "obj": "$var.job.formData"
+        },
+        "outgoing": {
+          "return_data": "$var.job.adapterName"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.17982456140350878,
+      "y": 0.37357954545454547,
+      "scheduled": false
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0.054093567251461985,
+      "y": 0.3096590909090909
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 0.8604938271604938,
+      "y": 0.4772727272727273
+    },
+    "d405": {
+      "name": "query",
+      "summary": "Query Collection Name",
+      "description": "Query collection name from JSON Form.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "collection",
+          "obj": "$var.job.formData"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.19005847953216373,
+      "y": 0.20738636363636365,
+      "scheduled": false
+    },
+    "e963": {
+      "name": "evaluation",
+      "summary": "Create Operation",
+      "description": "Create option to be performed",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": ".selectACrudOperation",
+                  "operand_1": {
+                    "variable": "formData",
+                    "task": "job"
+                  },
+                  "operator": "==",
+                  "operand_2": {
+                    "variable": "Create",
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 0.2962962962962963,
+      "y": 0.2940340909090909
+    },
+    "f491": {
+      "name": "evaluation",
+      "summary": "Read Operation",
+      "description": "Read operation to be performed",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": ".selectACrudOperation",
+                  "operand_1": {
+                    "variable": "formData",
+                    "task": "job"
+                  },
+                  "operator": "==",
+                  "operand_2": {
+                    "variable": "Read",
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 0.2887426900584795,
+      "y": 0.5127840909090909
+    },
+    "52c7": {
+      "name": "ViewData",
+      "summary": "View Data",
+      "description": "View data in a pretty format",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Would you like to perform another CRUD operation? Or exit.",
+          "message": "",
+          "body": "",
+          "variables": {},
+          "btn_success": "CRUD",
+          "btn_failure": "Exit"
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 0.6864197530864198,
+      "y": 0.4715909090909091,
+      "scheduled": false
+    },
+    "30f1": {
+      "name": "ShowJsonForm",
+      "summary": "Select an operation",
+      "description": "JSON form to allow user to reselect an operation",
+      "location": "Application",
+      "app": "JsonForms",
+      "displayName": "JsonForms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_id": "Mongo_CRUD_Form",
+          "instance_data": "$var.job.formData"
+        },
+        "outgoing": {
+          "export": "$var.job.formData"
+        },
+        "error": ""
+      },
+      "view": "/json-forms/task/ShowJsonForm",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "app",
+          "highlightString": "Json<span class='highlight-string'>Form</span>s"
+        },
+        {
+          "key": "name",
+          "highlightString": "ShowJson<span class='highlight-string'>Form</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Show Json <span class='highlight-string'>Form</span>"
+        },
+        {
+          "key": "description",
+          "highlightString": "Show Json <span class='highlight-string'>Form</span>"
+        }
+      ],
+      "groups": [],
+      "x": 0.6932098765432099,
+      "y": 0.18323863636363635,
+      "scheduled": false
+    },
+    "eedb": {
+      "name": "evaluation",
+      "summary": "Update Operation",
+      "description": "Update operation to be performed",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": ".selectACrudOperation",
+                  "operand_1": {
+                    "variable": "formData",
+                    "task": "job"
+                  },
+                  "operator": "==",
+                  "operand_2": {
+                    "variable": "Update",
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 0.2916666666666667,
+      "y": 0.7357954545454546
+    },
+    "234c": {
+      "name": "evaluation",
+      "summary": "Delete Operation",
+      "description": "Delete operation to be performed",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": ".selectACrudOperation",
+                  "operand_1": {
+                    "variable": "formData",
+                    "task": "job"
+                  },
+                  "operator": "==",
+                  "operand_2": {
+                    "variable": "Delete",
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 0.2916666666666667,
+      "y": 0.9488636363636364
+    },
+    "f1bb": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Mongo Create Job",
+      "description": "Run a child Job inside a Workflow",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "Mongo_Create",
+          "variables": {
+            "collectionName": {
+              "variable": "",
+              "task": "d405",
+              "value": "return_data"
+            },
+            "adapterName": {
+              "variable": "",
+              "task": "5534",
+              "value": "return_data"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>child</span>Job"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Child</span> Job"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run a <span class='highlight-string'>child</span> Job inside a Workflow"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": 0.43859649122807015,
+      "y": 0.2997159090909091
+    },
+    "6c5": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Mongo Read Job",
+      "description": "Mongo Read",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "Mongo_Read",
+          "variables": {
+            "adapterName": {
+              "variable": "",
+              "task": "5534",
+              "value": "return_data"
+            },
+            "collectionName": {
+              "variable": "",
+              "task": "d405",
+              "value": "return_data"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>child</span>Job"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Child</span> Job"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run a <span class='highlight-string'>child</span> Job inside a Workflow"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": 0.4407894736842105,
+      "y": 0.5213068181818182
+    },
+    "bc6f": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Mongo Update Job",
+      "description": "Run a child Job inside a Workflow",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "Mongo_Update",
+          "variables": {
+            "adapterName": {
+              "variable": "",
+              "task": "5534",
+              "value": "return_data"
+            },
+            "collectionName": {
+              "variable": "",
+              "task": "d405",
+              "value": "return_data"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>child</span>Job"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Child</span> Job"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run a <span class='highlight-string'>child</span> Job inside a Workflow"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": 0.44005847953216376,
+      "y": 0.7286931818181818
+    },
+    "63be": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Mongo Delete Opration",
+      "description": "Run a child Job inside a Workflow",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "Mongo_Delete",
+          "variables": {
+            "adapterName": {
+              "variable": "",
+              "task": "5534",
+              "value": "return_data"
+            },
+            "collectionName": {
+              "variable": "",
+              "task": "d405",
+              "value": "return_data"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>child</span>Job"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Child</span> Job"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run a <span class='highlight-string'>child</span> Job inside a Workflow"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": 0.4382716049382716,
+      "y": 0.9545454545454546
+    }
+  },
+  "transitions": {
+    "5534": {
+      "e963": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "5534": {
+        "type": "standard",
+        "state": "success"
+      },
+      "d405": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "d405": {
+      "e963": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e963": {
+      "f1bb": {
+        "type": "standard",
+        "state": "success"
+      },
+      "f491": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "8ba9": {},
+    "c16a": {},
+    "f491": {
+      "eedb": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "6c5": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a787": {},
+    "8e4a": {},
+    "52c7": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "30f1": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "30f1": {
+      "d405": {
+        "type": "revert",
+        "state": "success"
+      }
+    },
+    "eedb": {
+      "234c": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "bc6f": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "234c": {
+      "63be": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "4d59": {},
+    "d10b": {},
+    "de12": {},
+    "a310": {},
+    "9cf7": {},
+    "de5e": {},
+    "dab4": {},
+    "bd04": {},
+    "f1bb": {
+      "52c7": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "6c5": {
+      "52c7": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "bc6f": {
+      "52c7": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "63be": {
+      "52c7": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "type": "automation",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 1
+}

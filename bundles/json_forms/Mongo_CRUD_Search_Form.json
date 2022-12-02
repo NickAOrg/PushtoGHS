@@ -1,0 +1,97 @@
+{
+  "id": "600f18275a09e2458596a7af",
+  "bindingSchema": {},
+  "created": "2020-03-16T14:30:57.150Z",
+  "createdBy": "admin@pronghorn",
+  "description": "",
+  "lastUpdated": "2021-11-10T17:09:27.373Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Mongo_CRUD_Search_Form",
+  "schema": {
+    "title": "Mongo_CRUD_Search_Form",
+    "description": "",
+    "type": "object",
+    "required": [
+      "filter",
+      "sort"
+    ],
+    "properties": {
+      "filter": {
+        "type": "string",
+        "title": "Filter",
+        "description": "Filter. Enter {} to skip filtering."
+      },
+      "sort": {
+        "type": "string",
+        "title": "Sort",
+        "description": "Sort. Enter {} to skip sorting."
+      },
+      "start": {
+        "type": "number",
+        "title": "Start",
+        "description": "Start"
+      },
+      "limit": {
+        "type": "number",
+        "title": "Limit",
+        "description": "Limit"
+      }
+    }
+  },
+  "struct": {
+    "nodeId": "dd46d4d1-4fd2-42b1-a0d0-18a9fda3ee3d",
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "3b3555d1-4b00-4c20-82c5-7664ccf89dae",
+        "type": "string",
+        "title": "Filter",
+        "description": "Filter. Enter {} to skip filtering.",
+        "placeholder": "{}",
+        "required": true
+      },
+      {
+        "nodeId": "0daaf650-c589-4f6d-9dfc-0f2f99b91d9b",
+        "type": "string",
+        "title": "Sort",
+        "description": "Sort. Enter {} to skip sorting.",
+        "placeholder": "{}",
+        "required": true
+      },
+      {
+        "nodeId": "e5a94c71-0e6a-4461-8303-4b3e33a4bb65",
+        "type": "number",
+        "widget": "updown",
+        "title": "Start",
+        "description": "Start",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "nodeId": "bc46aa8b-38f1-4d0f-82e2-e7318e0cacc6",
+        "type": "number",
+        "widget": "updown",
+        "title": "Limit",
+        "description": "Limit",
+        "placeholder": "",
+        "required": false
+      }
+    ]
+  },
+  "uiSchema": {
+    "filter": {
+      "ui:placeholder": "{}"
+    },
+    "sort": {
+      "ui:placeholder": "{}"
+    },
+    "start": {
+      "ui:widget": "updown"
+    },
+    "limit": {
+      "ui:widget": "updown"
+    }
+  },
+  "validationSchema": {},
+  "version": "2020.1"
+}

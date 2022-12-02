@@ -1,0 +1,66 @@
+{
+  "id": "600f182f5a09e2458596a7b0",
+  "bindingSchema": {},
+  "created": "2020-03-16T14:25:57.227Z",
+  "createdBy": "admin@pronghorn",
+  "description": "",
+  "lastUpdated": "2021-11-10T17:09:27.371Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Mongo_CRUD_Document_Form",
+  "schema": {
+    "title": "Mongo_CRUD_Document_Form",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "title": "First Name",
+        "description": "First Name"
+      },
+      "lastName": {
+        "type": "string",
+        "title": "Last Name",
+        "description": "Last Name"
+      },
+      "email": {
+        "type": "string",
+        "title": "Email",
+        "description": "Email"
+      }
+    }
+  },
+  "struct": {
+    "nodeId": "0576762b-7171-4026-8247-0ded0c1de434",
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "52a9e6a4-0130-4850-88c1-cae89dfb1172",
+        "type": "string",
+        "title": "First Name",
+        "description": "First Name",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "nodeId": "a8c2277c-000b-424b-b6db-e356cc06eefc",
+        "type": "string",
+        "title": "Last Name",
+        "description": "Last Name",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "nodeId": "8de09de5-7815-4048-aa6f-d2ae0f22d4e3",
+        "type": "string",
+        "title": "Email",
+        "description": "Email",
+        "placeholder": "",
+        "required": false
+      }
+    ]
+  },
+  "uiSchema": {},
+  "validationSchema": {},
+  "version": "2020.1"
+}

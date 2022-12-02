@@ -1,0 +1,98 @@
+{
+  "bundleName": "@itentialopensource/mongo-crud-operations",
+  "version": "0.0.1",
+  "fingerprint": "638a4d1d958e4d01782f8981",
+  "createdEpoch": "1670008093658",
+  "artifacts": [
+    {
+      "id": "Mongo CRUD Automation",
+      "name": "Mongo CRUD Automation",
+      "type": "ac-agenda-job",
+      "location": "/bundles/ac_agenda_jobs/Mongo CRUD Automation.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_CRUD_Workflow",
+      "name": "Mongo_CRUD_Workflow",
+      "type": "workflow",
+      "location": "/bundles/workflows/Mongo_CRUD_Workflow.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_Create",
+      "name": "Mongo_Create",
+      "type": "workflow",
+      "location": "/bundles/workflows/Mongo_Create.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_Read",
+      "name": "Mongo_Read",
+      "type": "workflow",
+      "location": "/bundles/workflows/Mongo_Read.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_Update",
+      "name": "Mongo_Update",
+      "type": "workflow",
+      "location": "/bundles/workflows/Mongo_Update.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_Delete",
+      "name": "Mongo_Delete",
+      "type": "workflow",
+      "location": "/bundles/workflows/Mongo_Delete.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_CRUD_Child_WF",
+      "name": "Mongo_CRUD_Child_WF",
+      "type": "workflow",
+      "location": "/bundles/workflows/Mongo_CRUD_Child_WF.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_CRUD_Form",
+      "name": "Mongo_CRUD_Form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Mongo_CRUD_Form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_CRUD_Document_Form",
+      "name": "Mongo_CRUD_Document_Form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Mongo_CRUD_Document_Form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Mongo_CRUD_Search_Form",
+      "name": "Mongo_CRUD_Search_Form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Mongo_CRUD_Search_Form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}

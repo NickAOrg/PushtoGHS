@@ -1,0 +1,630 @@
+{
+  "canvasVersion": 1,
+  "created": "2020-03-16T16:51:36.253Z",
+  "createdVersion": "4.5.3-2019.2.9.0",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": true,
+    "email": ""
+  },
+  "description": null,
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "adapterName": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "entity": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      }
+    },
+    "required": [
+      "adapterName",
+      "entity"
+    ]
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.35.0",
+  "last_updated": "2021-11-10T17:09:27.029Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "name": "Mongo_CRUD_Child_WF",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "adapterName": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "entity": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "searched_results": {
+        "type": "object"
+      }
+    }
+  },
+  "tasks": {
+    "9334": {
+      "name": "find",
+      "summary": "Find items from the collection in the database",
+      "description": "Find items from the collection in the database",
+      "location": "Adapter",
+      "locationType": "DBMongo",
+      "app": "DBMongo",
+      "displayName": "DBMongo",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "options": "$var.d325.merged_object",
+          "adapter_id": "$var.job.adapterName"
+        },
+        "outgoing": {
+          "result": "$var.job.searched_results"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>find</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Find</span> items from the collection in the database"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Find</span> items from the collection in the database"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.227536231884058,
+      "y": 0.5164835164835165,
+      "scheduled": false
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0.13405797101449277,
+      "y": 0.5178571428571429
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 1.4666666666666666,
+      "y": 0.5151098901098901
+    },
+    "362c": {
+      "name": "ShowJsonForm",
+      "summary": "Show Json Form",
+      "description": "Show Json Form",
+      "location": "Application",
+      "app": "JsonForms",
+      "displayName": "JsonForms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_id": "Mongo_CRUD_Search_Form",
+          "instance_data": {
+            "filter": "{}",
+            "sort": "{}"
+          }
+        },
+        "outgoing": {
+          "export": null
+        },
+        "error": ""
+      },
+      "view": "/json-forms/task/ShowJsonForm",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>ShowJson</span>Form"
+        }
+      ],
+      "groups": [],
+      "x": 0.24347826086956523,
+      "y": 0.5151098901098901,
+      "scheduled": false
+    },
+    "a41f": {
+      "name": "query",
+      "summary": "Query Sort input",
+      "description": "Query sort input from the JSON Form",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": ".sort",
+          "obj": "$var.362c.export"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.35289855072463766,
+      "y": 0.625,
+      "scheduled": false
+    },
+    "df77": {
+      "name": "query",
+      "summary": "Query Filter input",
+      "description": "Query filter input from the JSON Form",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": ".filter",
+          "obj": "$var.362c.export"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.35,
+      "y": 0.39697802197802196,
+      "scheduled": false
+    },
+    "4eb4": {
+      "name": "parse",
+      "summary": "Parse Sort input string to object",
+      "description": "Parse Sort input string to object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "JSON",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "text": "$var.a41f.return_data"
+        },
+        "outgoing": {
+          "textObject": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>parse</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Parse</span>s a string to create an object."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Parse</span>s a JSON string, constructing the JavaScript value or object described by the string."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.4956521739130435,
+      "y": 0.6428571428571429,
+      "scheduled": false
+    },
+    "388c": {
+      "name": "modify",
+      "summary": "Modify Data to add Filter object",
+      "description": "Modify Data to add Filter object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.e7c5.updated_object",
+          "query": "filter",
+          "new_value": "$var.df77.return_data"
+        },
+        "outgoing": {
+          "updated_object": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.8101449275362319,
+      "y": 0.5178571428571429,
+      "scheduled": false
+    },
+    "e7c5": {
+      "name": "modify",
+      "summary": "Modify Data to add Sort object",
+      "description": "Modify Data to add Sort object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.362c.export",
+          "query": "sort",
+          "new_value": "$var.4eb4.textObject"
+        },
+        "outgoing": {
+          "updated_object": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.6594202898550725,
+      "y": 0.5137362637362637,
+      "scheduled": false
+    },
+    "8c99": {
+      "name": "merge",
+      "summary": "Merge Data",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "entity",
+              "value": {
+                "task": "4d79",
+                "variable": "return_data"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 0.9760869565217392,
+      "y": 0.5151098901098901
+    },
+    "d325": {
+      "name": "deepmerge",
+      "summary": "Deep Merge Data",
+      "description": "Merge data using extend",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "",
+              "value": {
+                "task": "388c",
+                "variable": "updated_object"
+              }
+            },
+            {
+              "key": "",
+              "value": {
+                "task": "8c99",
+                "variable": "merged_object"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "deep<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Deep <span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data using extend"
+        }
+      ],
+      "groups": [],
+      "x": 1.0623188405797102,
+      "y": 0.5123626373626373
+    },
+    "4d79": {
+      "name": "query",
+      "summary": "Query Data Using 'json-query' Format",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "",
+          "obj": "$var.job.entity"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.9123188405797101,
+      "y": 0.5137362637362637,
+      "scheduled": false
+    },
+    "a1f": {
+      "name": "ViewData",
+      "summary": "View Data",
+      "description": "View data in a pretty format",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error finding objects",
+          "message": "There was error finding the requested objects",
+          "body": "",
+          "variables": {},
+          "btn_success": "Retry",
+          "btn_failure": "Exit Workflow"
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 1.2260869565217392,
+      "y": 0.27945205479452057,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "9334": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      },
+      "a1f": {
+        "type": "standard",
+        "state": "error"
+      }
+    },
+    "workflow_start": {
+      "362c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "362c": {
+      "df77": {
+        "type": "standard",
+        "state": "success"
+      },
+      "a41f": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a41f": {
+      "4eb4": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "df77": {
+      "e7c5": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "4eb4": {
+      "e7c5": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "388c": {
+      "4d79": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e7c5": {
+      "388c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "8c99": {
+      "d325": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "d325": {
+      "9334": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "4d79": {
+      "8c99": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a1f": {
+      "9334": {
+        "type": "revert",
+        "state": "success"
+      },
+      "workflow_end": {
+        "type": "standard",
+        "state": "failure"
+      }
+    }
+  },
+  "type": "automation",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 1
+}
