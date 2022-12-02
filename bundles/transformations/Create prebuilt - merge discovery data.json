@@ -1,0 +1,100 @@
+{
+  "_id": "61aa46e4972d5600e3de8554",
+  "name": "Create prebuilt - merge discovery data",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "workflow",
+      "type": "array"
+    },
+    {
+      "$id": "operationsAutomation",
+      "type": "array"
+    },
+    {
+      "$id": "catalogAutomation",
+      "type": "array"
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "discoveryData",
+      "type": "object",
+      "properties": {
+        "workflow": {
+          "type": "array"
+        },
+        "operationsAutomation": {
+          "type": "array"
+        },
+        "catalogAutomation": {
+          "type": "array"
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "workflow",
+        "ptr": ""
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "discoveryData",
+        "ptr": "/workflow"
+      }
+    },
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "operationsAutomation",
+        "ptr": ""
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "discoveryData",
+        "ptr": "/operationsAutomation"
+      }
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "catalogAutomation",
+        "ptr": ""
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "discoveryData",
+        "ptr": "/catalogAutomation"
+      }
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 3,
+    "row": 5
+  },
+  "created": "2022-12-02T16:32:17.201Z",
+  "createdBy": {
+    "_id": "618009a031d7680dbad39d8b",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2022-12-02T16:32:17.201Z",
+  "lastUpdatedBy": {
+    "_id": "618009a031d7680dbad39d8b",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.17.7-2021.1.7",
+  "tags": []
+}

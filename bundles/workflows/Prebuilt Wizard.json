@@ -1,0 +1,1202 @@
+{
+  "canvasVersion": 2,
+  "created": "2021-12-07T22:13:38.175Z",
+  "createdVersion": "5.40.5-2021.1.35.0",
+  "created_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "description": "",
+  "errorHandler": null,
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "$id": "formData",
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "examples": [
+              "@acme"
+            ]
+          },
+          "prebuiltName": {
+            "type": "string",
+            "examples": [
+              "Example Prebuilt"
+            ]
+          },
+          "prebuiltDescription": {
+            "type": "string",
+            "default": "",
+            "examples": [
+              "This prebuilt will accomplish a particular use case"
+            ]
+          },
+          "readme": {
+            "type": "string",
+            "examples": [
+              "<!-- This is a comment in md (Markdown) format, it will not be visible to the end user -->  <!-- Update the below line with your Pre-Built name --> # Pre-Built Name  <!-- Leave TOC intact unless you've added or removed headers --> ## Table of Contents  * [Overview](#overview) * [Installation Prerequisites](#installation-prerequisites) * [Requirements](#requirements) * [Features](#features) * [Future Enhancements](#future-enhancements) * [How to Install](#how-to-install) * [How to Run](#how-to-run) * [Additional Information](#additional-information)  ## Overview  <!-- Write a few sentences about the Pre-Built and explain the use case(s) --> <!-- Avoid using the word Artifact%2E Please use Pre-Built, Pre-Built Transformation or Pre-Built Automation --> <!-- Ex%2E: The Migration Wizard enables IAP users to conveniently move their automation use cases between different IAP environments --> <!-- (e%2Eg%2E from Dev to Pre-Production or from Lab to Production)%2E -->  <!-- Workflow(s) Image Placeholder - TO BE ADDED DIRECTLY TO GitLab --> <!-- REPLACE COMMENT BELOW WITH IMAGE OF YOUR MAIN WORKFLOW --> <!-- <table><tr><td>   <img src=\"./images/workflow.png\" alt=\"workflow\" width=\"800px\"> </td></tr></table> --> <!-- REPLACE COMMENT ABOVE WITH IMAGE OF YOUR MAIN WORKFLOW -->  <!-- ADD ESTIMATED RUN TIME HERE --> <!-- e%2Eg%2E Estimated Run Time: 34 min%2E --> _Estimated Run Time_:  ## Installation Prerequisites  Users must satisfy the following pre-requisites:  <!-- Include any other required apps or adapters in this list --> <!-- Ex%2E: EC2 Adapter --> * Itential Automation Platform   * `^2020%2Ex%2Ex`  ## Requirements  This Pre-Built requires the following:  <!-- Unordered list highlighting the requirements of the Pre-Built --> <!-- EXAMPLE --> <!-- * cisco ios device --> <!-- * Ansible or NSO (with F5 NED) * -->  ## Features  The main benefits and features of the Pre-Built are outlined below%2E  <!-- Unordered list highlighting the most exciting features of the Pre-Built --> <!-- EXAMPLE --> <!-- * Automatically checks for device type --> <!-- * Displays dry-run to user (asking for confirmation) prior to pushing config to the device --> <!-- * Verifies downloaded file integrity (using md5), will try to download again if failed -->   ## Future Enhancements  <!-- OPTIONAL - Mention if the Pre-Built will be enhanced with additional features on the road map --> <!-- Ex%2E: This Pre-Built would support Cisco XR and F5 devices -->  ## How to Install  To install the Pre-Built:  * Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the Pre-Built%2E  * The Pre-Built can be installed from within App-Admin_Essential%2E Simply search for the name of your desired Pre-Built and click the install button (as shown below)%2E  <!-- REPLACE BELOW WITH IMAGE OF YOUR PUBLISHED PRE-BUILT --> <!-- <table><tr><td>   <img src=\"./images/install.png\" alt=\"install\" width=\"600px\"> </td></tr></table> --> <!-- REPLACE ABOVE WITH IMAGE OF YOUR PUBLISHED PRE-BUILT -->  <!-- OPTIONAL - Explain if external components are required outside of IAP --> <!-- Ex%2E: The Ansible roles required for this Pre-Built can be found in the repository located at https://gitlab%2Ecom/itentialopensource/pre-built-automations/hello-world -->  ## How to Run  Use the following to run the Pre-Built:  <!-- Explain the main entrypoint(s) for this Pre-Built: Automation Catalog item, Workflow, Postman, etc%2E -->  ## Additional Information  Please use your Itential Customer Success account if you need support when using this Pre-Built%2E"
+            ]
+          },
+          "zeroTouch": {
+            "type": "boolean",
+            "examples": [
+              true,
+              false
+            ]
+          },
+          "license": {
+            "type": "string",
+            "default": "Apache 2%2E0",
+            "examples": [
+              "Apache 2%2E0"
+            ]
+          },
+          "contributor": {
+            "type": "string",
+            "examples": [
+              "John Smith"
+            ]
+          },
+          "categories": {
+            "type": "array",
+            "default": []
+          },
+          "keywords": {
+            "type": "array",
+            "default": []
+          },
+          "operationsManagerAutomations": {
+            "type": "array",
+            "default": []
+          },
+          "automationCatalogs": {
+            "type": "array",
+            "default": []
+          },
+          "automationWorkflows": {
+            "type": "array",
+            "default": []
+          }
+        },
+        "required": []
+      }
+    },
+    "required": [
+      "formData"
+    ]
+  },
+  "lastUpdatedVersion": "3.61.22-2021.2.100.0",
+  "last_updated": "2022-12-02T16:32:17.107Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "name": "Prebuilt Wizard",
+  "outputData": {},
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "$id": "formData",
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "examples": [
+              "@acme"
+            ]
+          },
+          "prebuiltName": {
+            "type": "string",
+            "examples": [
+              "Example Prebuilt"
+            ]
+          },
+          "prebuiltDescription": {
+            "type": "string",
+            "default": "",
+            "examples": [
+              "This prebuilt will accomplish a particular use case"
+            ]
+          },
+          "readme": {
+            "type": "string",
+            "examples": [
+              "<!-- This is a comment in md (Markdown) format, it will not be visible to the end user -->  <!-- Update the below line with your Pre-Built name --> # Pre-Built Name  <!-- Leave TOC intact unless you've added or removed headers --> ## Table of Contents  * [Overview](#overview) * [Installation Prerequisites](#installation-prerequisites) * [Requirements](#requirements) * [Features](#features) * [Future Enhancements](#future-enhancements) * [How to Install](#how-to-install) * [How to Run](#how-to-run) * [Additional Information](#additional-information)  ## Overview  <!-- Write a few sentences about the Pre-Built and explain the use case(s) --> <!-- Avoid using the word Artifact%2E Please use Pre-Built, Pre-Built Transformation or Pre-Built Automation --> <!-- Ex%2E: The Migration Wizard enables IAP users to conveniently move their automation use cases between different IAP environments --> <!-- (e%2Eg%2E from Dev to Pre-Production or from Lab to Production)%2E -->  <!-- Workflow(s) Image Placeholder - TO BE ADDED DIRECTLY TO GitLab --> <!-- REPLACE COMMENT BELOW WITH IMAGE OF YOUR MAIN WORKFLOW --> <!-- <table><tr><td>   <img src=\"./images/workflow.png\" alt=\"workflow\" width=\"800px\"> </td></tr></table> --> <!-- REPLACE COMMENT ABOVE WITH IMAGE OF YOUR MAIN WORKFLOW -->  <!-- ADD ESTIMATED RUN TIME HERE --> <!-- e%2Eg%2E Estimated Run Time: 34 min%2E --> _Estimated Run Time_:  ## Installation Prerequisites  Users must satisfy the following pre-requisites:  <!-- Include any other required apps or adapters in this list --> <!-- Ex%2E: EC2 Adapter --> * Itential Automation Platform   * `^2020%2Ex%2Ex`  ## Requirements  This Pre-Built requires the following:  <!-- Unordered list highlighting the requirements of the Pre-Built --> <!-- EXAMPLE --> <!-- * cisco ios device --> <!-- * Ansible or NSO (with F5 NED) * -->  ## Features  The main benefits and features of the Pre-Built are outlined below%2E  <!-- Unordered list highlighting the most exciting features of the Pre-Built --> <!-- EXAMPLE --> <!-- * Automatically checks for device type --> <!-- * Displays dry-run to user (asking for confirmation) prior to pushing config to the device --> <!-- * Verifies downloaded file integrity (using md5), will try to download again if failed -->   ## Future Enhancements  <!-- OPTIONAL - Mention if the Pre-Built will be enhanced with additional features on the road map --> <!-- Ex%2E: This Pre-Built would support Cisco XR and F5 devices -->  ## How to Install  To install the Pre-Built:  * Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the Pre-Built%2E  * The Pre-Built can be installed from within App-Admin_Essential%2E Simply search for the name of your desired Pre-Built and click the install button (as shown below)%2E  <!-- REPLACE BELOW WITH IMAGE OF YOUR PUBLISHED PRE-BUILT --> <!-- <table><tr><td>   <img src=\"./images/install.png\" alt=\"install\" width=\"600px\"> </td></tr></table> --> <!-- REPLACE ABOVE WITH IMAGE OF YOUR PUBLISHED PRE-BUILT -->  <!-- OPTIONAL - Explain if external components are required outside of IAP --> <!-- Ex%2E: The Ansible roles required for this Pre-Built can be found in the repository located at https://gitlab%2Ecom/itentialopensource/pre-built-automations/hello-world -->  ## How to Run  Use the following to run the Pre-Built:  <!-- Explain the main entrypoint(s) for this Pre-Built: Automation Catalog item, Workflow, Postman, etc%2E -->  ## Additional Information  Please use your Itential Customer Success account if you need support when using this Pre-Built%2E"
+            ]
+          },
+          "zeroTouch": {
+            "type": "boolean",
+            "examples": [
+              true,
+              false
+            ]
+          },
+          "license": {
+            "type": "string",
+            "default": "Apache 2%2E0",
+            "examples": [
+              "Apache 2%2E0"
+            ]
+          },
+          "contributor": {
+            "type": "string",
+            "examples": [
+              "John Smith"
+            ]
+          },
+          "categories": {
+            "type": "array",
+            "default": []
+          },
+          "keywords": {
+            "type": "array",
+            "default": []
+          },
+          "operationsManagerAutomations": {
+            "type": "array",
+            "default": []
+          },
+          "automationCatalogs": {
+            "type": "array",
+            "default": []
+          },
+          "automationWorkflows": {
+            "type": "array",
+            "default": []
+          }
+        },
+        "required": []
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      }
+    }
+  },
+  "preAutomationTime": 0,
+  "sla": 0,
+  "tasks": {
+    "5054": {
+      "name": "createPublishedArtifactFromScratch",
+      "summary": "Creates artifact for publishing without DB calls",
+      "description": "Creates JSON object containing artifact file structure and all associated data from input tasks without touching database",
+      "groups": [],
+      "canvasName": "createPublishedArtifactFromScratch",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "type": "automatic",
+      "displayName": "AppArtifacts",
+      "variables": {
+        "incoming": {
+          "artifactData": "$var.a121.artifactData",
+          "modules": "$var.a121.modules",
+          "packageJson": "$var.a121.defaultPackageJson"
+        },
+        "outgoing": {
+          "callback": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "actor": "Pronghorn",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 11
+      },
+      "x": 0.125,
+      "y": 2.75
+    },
+    "7365": {
+      "name": "ViewData",
+      "summary": "View Data",
+      "description": "Displays a message and runtime data to an operator. This can be used to request a decision, or used for acknowledgement only.",
+      "groups": [],
+      "canvasName": "ViewData",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error Encountered",
+          "message": "An error was thrown while discovering the different components of the automation. The error is shown below.",
+          "body": "$var.837c.discovery",
+          "variables": {},
+          "btn_success": "End Automation",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "decorators": []
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 0,
+        "y": 3
+      },
+      "x": 0,
+      "y": 0.75
+    },
+    "8867": {
+      "name": "ViewData",
+      "summary": "View Invalid Components",
+      "description": "View Invalid Components and transition to end.",
+      "groups": [],
+      "canvasName": "ViewData",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Invalid Components Discovered",
+          "message": "Invalid components were discovered during the discovery phase. The invalid components are shown below.",
+          "body": "$var.f58a.return_data",
+          "variables": {},
+          "btn_success": "End Automation",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "decorators": []
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 0,
+        "y": 6
+      },
+      "x": 0,
+      "y": 1.5
+    },
+    "16fd": {
+      "name": "makeData",
+      "summary": "Convert input into a different data type",
+      "description": "This task takes an input and converts it to a different data type. For example, converting a number into a string.",
+      "groups": [],
+      "canvasName": "makeData",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "input": "/prebuilts/<!id!>/export",
+          "outputType": "string",
+          "variables": "$var.d4ae.object"
+        },
+        "outgoing": {
+          "output": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 15
+      },
+      "x": 0.125,
+      "y": 3.75,
+      "actor": "Pronghorn"
+    },
+    "28c3": {
+      "name": "downloadArtifact",
+      "summary": "Download Artifact",
+      "description": "Download Artifact",
+      "groups": [],
+      "canvasName": "downloadArtifact",
+      "location": "Application",
+      "app": "AppArtifacts",
+      "displayName": "AppArtifacts",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "artifactLink": "$var.16fd.output",
+          "gitLink": ""
+        },
+        "outgoing": {},
+        "decorators": []
+      },
+      "view": "/app_artifacts/views/tasks/downloadArtifact",
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 18
+      },
+      "x": 0.125,
+      "y": 4.5
+    },
+    "workflow_end": {
+      "groups": [],
+      "name": "workflow_end",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 20
+      },
+      "x": 0.125,
+      "y": 5
+    },
+    "854c": {
+      "name": "decision",
+      "summary": "Decide branch path",
+      "description": "Decide branch path",
+      "groups": [],
+      "canvasName": "decision",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "decisionArray": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "operand_1": {
+                    "variable": "zeroTouch",
+                    "task": "fb30"
+                  },
+                  "operand_2": {
+                    "variable": "true",
+                    "task": "static"
+                  },
+                  "operator": "=="
+                }
+              ],
+              "taskId": "workflow_end"
+            },
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "operand_1": {
+                    "variable": "executeManualTasks",
+                    "task": "fb30"
+                  },
+                  "operand_2": {
+                    "variable": "false",
+                    "task": "static"
+                  },
+                  "operator": "=="
+                }
+              ],
+              "taskId": "28c3"
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": ""
+        }
+      },
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 17
+      },
+      "x": 0.125,
+      "y": 4.25
+    },
+    "d4ae": {
+      "name": "setObjectKey",
+      "summary": "Set Object Key",
+      "description": "Set an object key",
+      "groups": [],
+      "canvasName": "setObjectKey",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Object",
+      "variables": {
+        "incoming": {
+          "obj": {},
+          "path": [
+            "id"
+          ],
+          "value": "$var.9dbe.AEArtifactID"
+        },
+        "outgoing": {
+          "object": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 14
+      },
+      "x": 0.125,
+      "y": 3.5,
+      "actor": "Pronghorn"
+    },
+    "e7d2": {
+      "name": "ViewData",
+      "summary": "View Pre-Built creation Error",
+      "description": "error",
+      "groups": [],
+      "canvasName": "ViewData",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error creating pre-built.",
+          "message": "An error was thrown while creating the prebuilt. Press 'End Automation' to terminate the job. The error is shown below.",
+          "body": "$var.5054.callback",
+          "variables": {},
+          "btn_success": "End Automation",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "decorators": []
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 0,
+        "y": 11
+      },
+      "x": 0,
+      "y": 2.75
+    },
+    "3b18": {
+      "name": "decision",
+      "summary": "Decide branch path",
+      "description": "Decide branch path",
+      "groups": [],
+      "canvasName": "decision",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "decisionArray": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "operand_1": {
+                    "variable": "zeroTouch",
+                    "task": "fb30"
+                  },
+                  "operand_2": {
+                    "variable": "false",
+                    "task": "static"
+                  },
+                  "operator": "=="
+                }
+              ],
+              "taskId": "7e43"
+            },
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "operand_1": {
+                    "variable": "",
+                    "task": "static"
+                  },
+                  "operand_2": {
+                    "variable": "",
+                    "task": "static"
+                  },
+                  "operator": "=="
+                }
+              ],
+              "taskId": "62db"
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": ""
+        }
+      },
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 8
+      },
+      "x": 0.125,
+      "y": 2
+    },
+    "fb30": {
+      "groups": [],
+      "name": "transformation",
+      "summary": "Parse Form Data",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "canvasName": "transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "61a8f96c972d5600e3de8552",
+          "variableMap": {
+            "formData": "$var.job.formData"
+          },
+          "options": {
+            "extractOutput": false,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "automationWorkflows": "",
+          "automationCatalogs": "",
+          "operationsManagerOperations": "",
+          "keywords": "",
+          "categories": "",
+          "contributor": "",
+          "license": "",
+          "zeroTouch": "",
+          "readme": "",
+          "prebuiltDescription": "",
+          "prebuiltName": "",
+          "scope": ""
+        }
+      },
+      "deprecated": false,
+      "task_name": "Create prebuilt - Get formData",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 1
+      },
+      "x": 0.125,
+      "y": 0.25
+    },
+    "9dbe": {
+      "name": "addArtifactToAdminEssentials",
+      "summary": "Adds an artifact to AE via direct mongo injection",
+      "description": "Adds an artifact created from a published artifact to admin essentials",
+      "groups": [],
+      "canvasName": "addArtifactToAdminEssentials",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "type": "automatic",
+      "displayName": "AppArtifacts",
+      "variables": {
+        "incoming": {
+          "artifactBundle": "$var.7a49.outgoing"
+        },
+        "outgoing": {
+          "AEArtifactID": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "actor": "Pronghorn",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 13
+      },
+      "x": 0.125,
+      "y": 3.25
+    },
+    "7a49": {
+      "name": "transformation",
+      "summary": "JSON Transformation",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "groups": [],
+      "canvasName": "transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "5f287844d76d950aa5f59814",
+          "variableMap": {
+            "incoming": "$var.5054.callback"
+          },
+          "options": {
+            "extractOutput": true,
+            "validateIncoming": false,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "outgoing": ""
+        }
+      },
+      "deprecated": false,
+      "task_name": "Create prebuilt - Fix packagejson",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 12
+      },
+      "x": 0.125,
+      "y": 3
+    },
+    "a121": {
+      "name": "transformation",
+      "summary": "Format for Publish",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "groups": [],
+      "canvasName": "transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "6197e2fcda174d24c34d36dc",
+          "variableMap": {
+            "scope": "$var.fb30.scope",
+            "componentsFormSelection": "$var.62db.componentInput",
+            "discoverComponentsOutput": "$var.837c.discovery",
+            "keywords": "$var.fb30.keywords",
+            "categories": "$var.fb30.categories",
+            "license": "$var.fb30.license",
+            "readme": "$var.fb30.readme",
+            "contributor": "$var.fb30.contributor",
+            "description": "$var.fb30.prebuiltDescription",
+            "name": "$var.fb30.prebuiltName"
+          },
+          "options": {
+            "extractOutput": false,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "defaultPackageJson": "",
+          "modules": "",
+          "artifactData": ""
+        }
+      },
+      "deprecated": false,
+      "task_name": " Create prebuilt - Format Publish",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 10
+      },
+      "x": 0.125,
+      "y": 2.5
+    },
+    "62db": {
+      "name": "transformation",
+      "summary": "Determine Components for Publish",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "groups": [],
+      "canvasName": "transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "61aa625a972d5600e3de8555",
+          "variableMap": {
+            "originalComponents": "$var.c09c.componentEditorFormInput",
+            "formData": "$var.7e43.export"
+          },
+          "options": {
+            "extractOutput": true,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "componentInput": ""
+        }
+      },
+      "deprecated": false,
+      "task_name": "Create Prebuilt - Determine Components",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 9
+      },
+      "x": 0.125,
+      "y": 2.25
+    },
+    "7e43": {
+      "name": "ShowJsonForm",
+      "summary": "Show Json Form",
+      "description": "Show Json Form",
+      "groups": [],
+      "canvasName": "ShowJsonForm",
+      "location": "Application",
+      "app": "JsonForms",
+      "displayName": "JsonForms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_id": "Create prebuilt - Edit discovered components",
+          "instance_data": "$var.c09c.componentEditorFormInput"
+        },
+        "outgoing": {
+          "export": ""
+        },
+        "decorators": []
+      },
+      "view": "/json-forms/task/ShowJsonForm",
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 2,
+        "y": 8
+      },
+      "x": 0.25,
+      "y": 2
+    },
+    "aded": {
+      "name": "arrayLength",
+      "summary": "Get invalid components length",
+      "description": "Get invalid components length",
+      "groups": [],
+      "canvasName": "length",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Array",
+      "variables": {
+        "incoming": {
+          "arr": "$var.f58a.return_data"
+        },
+        "outgoing": {
+          "length": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "actor": "Pronghorn",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 5
+      },
+      "x": 0.125,
+      "y": 1.25
+    },
+    "f58a": {
+      "name": "query",
+      "summary": "Query invalid components",
+      "description": "Query invalid components",
+      "groups": [],
+      "canvasName": "query",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": "false",
+          "query": "invalidComponents",
+          "obj": "$var.837c.discovery"
+        },
+        "outgoing": {
+          "return_data": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 4
+      },
+      "x": 0.125,
+      "y": 1
+    },
+    "837c": {
+      "name": "componentDiscovery",
+      "summary": "Performs discovery on Automation Catalogs or Workflows",
+      "description": "Discovers any referenced components within automation catalogs",
+      "groups": [],
+      "canvasName": "componentDiscovery",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "type": "automatic",
+      "displayName": "AppArtifacts",
+      "variables": {
+        "incoming": {
+          "entryPoint": "$var.76c8.discoveryData"
+        },
+        "outgoing": {
+          "discovery": ""
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "actor": "Pronghorn",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 3
+      },
+      "x": 0.125,
+      "y": 0.75
+    },
+    "957d": {
+      "name": "decision",
+      "summary": "Decide branch path",
+      "description": "Decide branch path",
+      "groups": [],
+      "canvasName": "decision",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "decisionArray": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "operand_1": {
+                    "variable": "length",
+                    "task": "aded"
+                  },
+                  "operand_2": {
+                    "variable": "0",
+                    "task": "static"
+                  },
+                  "operator": "=="
+                }
+              ],
+              "taskId": "c09c"
+            },
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "operand_1": {
+                    "variable": "return_data",
+                    "task": "f58a"
+                  },
+                  "operand_2": {
+                    "variable": "0",
+                    "task": "static"
+                  },
+                  "operator": "=="
+                }
+              ],
+              "taskId": "8867"
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": ""
+        }
+      },
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 6
+      },
+      "x": 0.125,
+      "y": 1.5
+    },
+    "76c8": {
+      "name": "transformation",
+      "summary": "Create Discovery Object",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "groups": [],
+      "canvasName": "transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "61aa46e4972d5600e3de8554",
+          "variableMap": {
+            "catalogAutomation": "$var.fb30.automationCatalogs",
+            "operationsAutomation": "$var.fb30.operationsManagerOperations",
+            "workflow": "$var.fb30.automationWorkflows"
+          },
+          "options": {
+            "extractOutput": true,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "discoveryData": ""
+        }
+      },
+      "deprecated": false,
+      "task_name": "Create prebuilt - merge discovery data",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 2
+      },
+      "x": 0.125,
+      "y": 0.5
+    },
+    "34a8": {
+      "name": "ViewData",
+      "summary": "Error Adding Prebuilt to Admin Essentials",
+      "description": "Displays a message and runtime data to an operator. This can be used to request a decision, or used for acknowledgement only.",
+      "groups": [],
+      "canvasName": "ViewData",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error Adding Prebuilt to Admin Essentials",
+          "message": "An error was thrown while adding the prebuilt to Admin Essentials. Press 'End Automation' to terminate the job. The error is shown below.",
+          "body": "$var.9dbe.AEArtifactID",
+          "variables": {},
+          "btn_success": "End Automation",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "decorators": []
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "gridCoordinate": {
+        "x": 0,
+        "y": 14
+      },
+      "x": 0,
+      "y": 3.5
+    },
+    "c09c": {
+      "name": "transformation",
+      "summary": "Components",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "groups": [],
+      "canvasName": "transformation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "619d03ad69bd2d6d0005f64d",
+          "variableMap": {
+            "componentDiscoveryOutput": "$var.837c.discovery"
+          },
+          "options": {
+            "extractOutput": true,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "componentEditorFormInput": ""
+        }
+      },
+      "deprecated": false,
+      "task_name": "Create prebuilt - Edit components input",
+      "gridCoordinate": {
+        "x": 1,
+        "y": 7
+      },
+      "x": 0.125,
+      "y": 1.75
+    },
+    "workflow_start": {
+      "groups": [],
+      "name": "workflow_start",
+      "x": 0,
+      "y": 0,
+      "gridCoordinate": {
+        "x": 1,
+        "y": 0
+      }
+    }
+  },
+  "transitions": {
+    "5054": {
+      "7a49": {
+        "type": "standard",
+        "state": "success"
+      },
+      "e7d2": {
+        "state": "error",
+        "type": "standard"
+      }
+    },
+    "7365": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "8867": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "16fd": {
+      "854c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "28c3": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "854c": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      },
+      "28c3": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "d4ae": {
+      "16fd": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e7d2": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "3b18": {
+      "62db": {
+        "type": "standard",
+        "state": "success"
+      },
+      "7e43": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "fb30": {
+      "76c8": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "9dbe": {
+      "d4ae": {
+        "type": "standard",
+        "state": "success"
+      },
+      "34a8": {
+        "state": "error",
+        "type": "standard"
+      }
+    },
+    "7a49": {
+      "9dbe": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a121": {
+      "5054": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "62db": {
+      "a121": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7e43": {
+      "62db": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "aded": {
+      "957d": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f58a": {
+      "aded": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "837c": {
+      "7365": {
+        "state": "error",
+        "type": "standard"
+      },
+      "f58a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "957d": {
+      "8867": {
+        "state": "success",
+        "type": "standard"
+      },
+      "c09c": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "76c8": {
+      "837c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "34a8": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "c09c": {
+      "3b18": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "fb30": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "type": "automation",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 1
+}

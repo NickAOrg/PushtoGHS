@@ -1,0 +1,161 @@
+{
+  "bundleName": "@itentialopensource/prebuilt-wizard",
+  "version": "0.0.1",
+  "fingerprint": "638a4d91958e4d01782f8982",
+  "createdEpoch": "1670008209893",
+  "artifacts": [
+    {
+      "id": "Prebuilt Wizard",
+      "name": "Prebuilt Wizard",
+      "type": "workflow",
+      "location": "/bundles/workflows/Prebuilt Wizard.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Prebuilt Wizard Re-Discover",
+      "name": "Prebuilt Wizard Re-Discover",
+      "type": "workflow",
+      "location": "/bundles/workflows/Prebuilt Wizard Re-Discover.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Create Prebuilt Form",
+      "name": "Create Prebuilt Form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Create Prebuilt Form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Create prebuilt - Edit discovered components",
+      "name": "Create prebuilt - Edit discovered components",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Create prebuilt - Edit discovered components.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Prebuilt Wizard Re-Discover",
+      "name": "Prebuilt Wizard Re-Discover",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Prebuilt Wizard Re-Discover.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Re-Discovery Components Form",
+      "name": "Re-Discovery Components Form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Re-Discovery Components Form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "61a8f96c972d5600e3de8552",
+      "name": "Create prebuilt - Get formData",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create prebuilt - Get formData.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f287844d76d950aa5f59814",
+      "name": "Create prebuilt - Fix packagejson",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create prebuilt - Fix packagejson.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "6197e2fcda174d24c34d36dc",
+      "name": " Create prebuilt - Format Publish",
+      "type": "transformation",
+      "location": "/bundles/transformations/ Create prebuilt - Format Publish.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "61aa625a972d5600e3de8555",
+      "name": "Create Prebuilt - Determine Components",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create Prebuilt - Determine Components.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "61aa46e4972d5600e3de8554",
+      "name": "Create prebuilt - merge discovery data",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create prebuilt - merge discovery data.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "619d03ad69bd2d6d0005f64d",
+      "name": "Create prebuilt - Edit components input",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create prebuilt - Edit components input.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "6210015da161ae00ef6164b4",
+      "name": "convertArtifactInfoToForm",
+      "type": "transformation",
+      "location": "/bundles/transformations/convertArtifactInfoToForm.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "6239fdc572a2f101008f5cf1",
+      "name": "Create prebuilt - convertFormOutputToDiscoveryFormat",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create prebuilt - convertFormOutputToDiscoveryFormat.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "605b870f21c795008dc26119",
+      "name": "createArtifactForPublish",
+      "type": "transformation",
+      "location": "/bundles/transformations/createArtifactForPublish.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "605b86f821c795008dc26118",
+      "name": "mergeFormWithDiscovery",
+      "type": "transformation",
+      "location": "/bundles/transformations/mergeFormWithDiscovery.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "621002baa161ae00ef6164b5",
+      "name": "translateSchemaPushBundles",
+      "type": "transformation",
+      "location": "/bundles/transformations/translateSchemaPushBundles.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}
